@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "A-WorkManager"
 include(":app")
 include(":uploadimage")
+include(":downloadfile")
