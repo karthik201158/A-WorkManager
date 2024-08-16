@@ -17,12 +17,6 @@ class UploadWorker @AssistedInject constructor(
     @Assisted workerParameters: WorkerParameters
 ) : CoroutineWorker(ctx, workerParameters) {
 
-    companion object {
-       private const val TAG = "UploadWorker"
-        const val TASK_OUTPUT = "taskOutPut"
-        const val IS_DONE = "isDone"
-    }
-
     override suspend fun doWork(): Result {
         return try {
             Log.d(TAG, "Starting image upload...")
@@ -44,6 +38,12 @@ class UploadWorker @AssistedInject constructor(
             TASK_OUTPUT to taskOutput,
             IS_DONE to isDone
         )
+    }
+
+    companion object {
+        private const val TAG = "UploadWorker"
+        const val TASK_OUTPUT = "taskOutPut"
+        const val IS_DONE = "isDone"
     }
 
 }
